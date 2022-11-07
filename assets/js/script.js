@@ -59,7 +59,6 @@ function randomOut(){
 function upMole(){
     rand = randomOut()
     let randHole = hole[rand]
-    console.log(rand, randHole)
     randHole.classList.add('out')
     timeRand = timeRandom()
     setTimeout(() => {
