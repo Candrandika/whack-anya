@@ -14,6 +14,13 @@ let hiscoreVal = 0
 let timeVal = 10
 let moleOut = false;
 
+if(localStorage.highscore){
+    hiscoreVal = localStorage.highscore
+}else{
+    localStorage.setItem('highscore', 0)
+    hiscoreVal = localStorage.highscore
+}
+
 score.innerHTML = scoreVal
 hiscore.innerHTML = hiscoreVal
 time.innerHTML = timeVal
@@ -32,6 +39,7 @@ function start(){
             over = true
             if(scoreVal > hiscoreVal){
                 hiscoreVal = scoreVal
+                localStorage.setItem('highscore', hiscoreVal)
                 hiscore.innerHTML = hiscoreVal
             }
         }, 10000)
